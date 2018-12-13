@@ -17,3 +17,41 @@ code {
   text-align: center;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.nav {
+  height: 24px;
+  padding: 5px;
+  background-color: gainsboro;
+}
+
+.user {
+  list-style-type: none;
+}
+
+.user > ul {
+  margin: 0;
+}
+
+.usercard {
+  background-color: blanchedalmond;
+  width: 200px;
+  padding: 4px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.usercard > span {
+  font-weight: bold;
+}
+
+.user-entry {
+  width: 400px;
+  padding: 4px;
+  margin: 5px;
+  display: block;
+}

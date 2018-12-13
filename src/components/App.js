@@ -3,13 +3,22 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import UserManager from './UserManager';
 import AnotherComponent from './AnotherComponent';
 import NotFound from './NotFound'
+import Nav from './Nav'
+import { connect } from 'react-redux'
+import { handleInitialData } from "../actions/shared";
 
 class App extends Component {
+  componentDidMount() {
+    const {dispatch} = this.props;
+
+    dispatch(handleInitialData())
+  }
+
   render() {
     return (
       <Router>
-        <div className='App'>
-          Main App (Nav placeholder)
+        <div className='container'>
+          <Nav />
           <Switch>
             <Route path='/' exact component={UserManager} />
             <Route path='/Another' exact component={AnotherComponent} />
@@ -21,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default connect()(App)
